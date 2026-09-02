@@ -4,7 +4,7 @@
       <h1>Catálogo de Cursos</h1>
       <div class="filtros">
         <input
-          v-model="busqueda"  <!-- Mantiene sincronizado el valor de la caja de texto con variable busqueda -->
+          v-model="busqueda"
           @input="buscarCursos"
           type="text"
           placeholder="Buscar cursos..."
