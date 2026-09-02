@@ -1,0 +1,91 @@
+.navbar {
+  background: #FDF8F0;
+  border-bottom: 1px solid #E8DFD1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+}
+.brand-bubble {
+  background: #DAE8F0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  letter-spacing: -0.3px;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-link {
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link.router-link-active {
+  color: #111827;
+}
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-rol {
+  background: #F5F0E6;
+  color: #6b7280;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.nav-nombre {
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.btn-logout {
+  background: none;
+  border: 1px solid #E8DFD1;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #6b7280;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-logout:hover {
+  background: #F5F0E6;
+  color: #111827;
+}
+.btn-register {
+  background: #111827;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-register:hover {
+  background: #374151;
+}

@@ -1,0 +1,45 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: academia_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: academia_final
+    ports:
+      - "3307:3306"  # expone el puerto interno 3306 como 3307 para no chocar con otro MySQL local
+    volumes:
+      - mysql_data:/var/lib/mysql  # volumen: los datos sobreviven aunque el contenedor se borre
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: academia_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: mysql+pymysql://root:root@mysql:3306/academia_final  # "mysql" es el nombre del servicio en la red Docker
+      JWT_SECRET_KEY: cambia-esta-clave-por-una-segura-en-produccion
+      FLASK_DEBUG: "0"
+    ports:
+      - "5000:5000"
+    depends_on:
+      mysql:
+        condition: service_healthy  # arranca solo cuando MySQL pasó la verificación de salud
+
+  frontend:
+    build: ./frontend
+    container_name: academia_frontend
+    restart: unless-stopped
+    environment:
+      VITE_PROXY_TARGET: http://backend:5000  # el proxy apunta al contenedor backend, no a localhost
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
