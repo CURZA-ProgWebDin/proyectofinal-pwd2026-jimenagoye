@@ -6,7 +6,7 @@
       </router-link>
 
       <div class="navbar-links">
-        <router-link to="/cursos" class="nav-link">CatÃ¡logo</router-link>
+        <router-link to="/cursos" class="nav-link">Catálogo</router-link>
 
         <!-- Enlace visibles solo si hay sesiÃ³n iniciada -->
         <template v-if="auth.isLoggedIn">
@@ -25,7 +25,7 @@
         </template>
 
         <template v-else>
-          <router-link to="/login" class="nav-link">Iniciar SesiÃ³n</router-link>
+          <router-link to="/login" class="nav-link">Iniciar Sesión</router-link>
           <router-link to="/registro" class="btn-register">Registrarse</router-link>
         </template>
       </div>

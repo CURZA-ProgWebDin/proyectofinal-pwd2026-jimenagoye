@@ -22,7 +22,7 @@
           <CursoCard v-for="c in misCursos" :key="c.id" :curso="c" />
         </div>
         <p v-else class="empty-state">
-          No estÃ¡s inscripto en ningÃºn curso.
+          No estás inscripto en ningún curso.
           <router-link to="/cursos">Explorar cursos</router-link>
         </p>
       </div>
@@ -83,7 +83,7 @@
             <input v-model="perfilForm.nombre" type="text" />
           </div>
           <div class="field">
-            <label>BiografÃ­a</label>
+            <label>Biografí­a</label>
             <textarea v-model="perfilForm.biografia" rows="3"></textarea>
           </div>
           <button type="submit" class="btn-primary">Guardar Cambios</button>
@@ -117,8 +117,8 @@ const perfilForm = reactive({
 onMounted(async () => {
   try {
     const [cursosRes, inscRes] = await Promise.all([
-      api.get("/inscripciones/mis-cursos"),  // cursos en los que estÃ¡ inscripto el alumno
-      api.get("/inscripciones/"),  // histÃ³rico de todas sus inscripciones
+      api.get("/inscripciones/mis-cursos"),  // cursos en los que está inscripto el alumno
+      api.get("/inscripciones/"),
     ]);
     misCursos.value = cursosRes.data;
     inscripciones.value = inscRes.data;
@@ -129,7 +129,7 @@ onMounted(async () => {
 
 async function guardarPerfil() {
   try {
-    const { data } = await api.put(`/usuarios/${auth.usuario.id}`, perfilForm);  // actualiza nombre y biografÃ­a del perfil
+    const { data } = await api.put(`/usuarios/${auth.usuario.id}`, perfilForm);  // actualiza nombre y biografí­a del perfil
     auth.usuario = data.usuario;
     localStorage.setItem("usuario", JSON.stringify(data.usuario));
     alert("Perfil actualizado");
@@ -141,7 +141,7 @@ async function guardarPerfil() {
 async function cancelarInscripcion(insc) {
   if (!window.confirm(`Â¿Cancelar la inscripciÃ³n a "${insc.curso_titulo}"?`)) return;
   try {
-    await api.delete(`/inscripciones/${insc.id}`);  // cancela la inscripciÃ³n (mÃ©todo DELETE)
+    await api.delete(`/inscripciones/${insc.id}`);  // cancela la inscripción (método DELETE)
     const [cursosRes, inscRes] = await Promise.all([
       api.get("/inscripciones/mis-cursos"),
       api.get("/inscripciones/"),
@@ -149,7 +149,7 @@ async function cancelarInscripcion(insc) {
     misCursos.value = cursosRes.data;
     inscripciones.value = inscRes.data;
   } catch (e) {
-    alert(e.response?.data?.error || "Error al cancelar inscripciÃ³n");
+    alert(e.response?.data?.error || "Error al cancelar inscripción");
   }
 }
 </script>
