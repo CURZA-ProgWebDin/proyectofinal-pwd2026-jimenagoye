@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="dashboard">
     <div class="dashboard-header">
       <h1>Mi Perfil</h1>
@@ -83,7 +83,7 @@
             <input v-model="perfilForm.nombre" type="text" />
           </div>
           <div class="field">
-            <label>Biografí­a</label>
+            <label>Biografía</label>
             <textarea v-model="perfilForm.biografia" rows="3"></textarea>
           </div>
           <button type="submit" class="btn-primary">Guardar Cambios</button>
@@ -129,7 +129,7 @@ onMounted(async () => {
 
 async function guardarPerfil() {
   try {
-    const { data } = await api.put(`/usuarios/${auth.usuario.id}`, perfilForm);  // actualiza nombre y biografí­a del perfil
+    const { data } = await api.put(`/usuarios/${auth.usuario.id}`, perfilForm);  // actualiza nombre y biografía del perfil
     auth.usuario = data.usuario;
     localStorage.setItem("usuario", JSON.stringify(data.usuario));
     alert("Perfil actualizado");
@@ -139,7 +139,7 @@ async function guardarPerfil() {
 }
 
 async function cancelarInscripcion(insc) {
-  if (!window.confirm(`Â¿Cancelar la inscripciÃ³n a "${insc.curso_titulo}"?`)) return;
+  if (!window.confirm(`¿Cancelar la inscripción a "${insc.curso_titulo}"?`)) return;
   try {
     await api.delete(`/inscripciones/${insc.id}`);  // cancela la inscripción (método DELETE)
     const [cursosRes, inscRes] = await Promise.all([

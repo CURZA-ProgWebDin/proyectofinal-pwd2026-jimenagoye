@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="detalle" v-if="curso">
     <div class="detalle-hero" :style="{ backgroundImage: `url(${curso.imagen_url || imagenDefault})` }">
       <div class="detalle-hero-overlay">
@@ -18,14 +18,14 @@
         >
           Inscribirse
         </button>
-        <span v-if="inscrito" class="inscrito-badge">Inscripto âœ“</span>
+        <span v-if="inscrito" class="inscrito-badge">Inscripto ✓</span>
       </div>
     </div>
     <div class="detalle-body">
       <h2>Temario</h2>
       <Temario :modulos="curso.modulos || []" />
       <p v-if="!curso.modulos?.length" class="empty-temario">
-        Este curso aÃºn no tiene mÃ³dulos cargados.
+        Este curso aún no tiene módulos cargados.
       </p>
 
       <AdminCurso
@@ -73,7 +73,7 @@ async function cargarCurso() {
 
 async function inscribirse() {
   try {
-    await api.post("/inscripciones/", { curso_id: curso.value.id });  // registra la inscripciÃ³n del alumno
+    await api.post("/inscripciones/", { curso_id: curso.value.id });  // registra la inscripción del alumno
     inscrito.value = true;
   } catch (e) {
     alert(e.response?.data?.error || "Error al inscribirse");

@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="admin-usuarios">
     <div class="head">
       <h1>Administrar Usuarios</h1>
@@ -70,7 +70,7 @@ async function cargarUsuarios() {
 }
 
 async function desactivar(usuario) {
-  if (!window.confirm(`Â¿Desactivar a ${usuario.nombre}?`)) return;
+  if (!window.confirm(`¿Desactivar a ${usuario.nombre}?`)) return;
   try {
     await api.delete(`/usuarios/${usuario.id}`); // desactiva la cuenta del usuario
     await cargarUsuarios(); // recarga la tabla para reflejar el estado nuevo

@@ -1,27 +1,27 @@
-﻿<template>
+<template>
   <div class="crear-curso">
     <h1>Crear Nuevo Curso</h1>
     <form @submit.prevent="handleCrear" class="curso-form">
       <div class="field">
-        <label>TÃ­tulo del curso</label>
-        <input v-model="form.titulo" type="text" required placeholder="Ej: Ãlgebra Lineal I" />
+        <label>Título del curso</label>
+        <input v-model="form.titulo" type="text" required placeholder="Ej: Álgebra Lineal I" />
       </div>
       <div class="field">
-        <label>DescripciÃ³n</label>
-        <textarea v-model="form.descripcion" rows="4" required placeholder="DescribÃ­ de quÃ© trata el curso..."></textarea>
+        <label>Descripción</label>
+        <textarea v-model="form.descripcion" rows="4" required placeholder="Describí de qué trata el curso..."></textarea>
       </div>
       <div class="field-row">
         <div class="field">
-          <label>AÃ±o</label>
+          <label>Año</label>
           <select v-model="form.anio">
-            <option :value="1">Primer aÃ±o</option>
-            <option :value="2">Segundo aÃ±o</option>
-            <option :value="3">Tercer aÃ±o</option>
+            <option :value="1">Primer año</option>
+            <option :value="2">Segundo año</option>
+            <option :value="3">Tercer año</option>
           </select>
         </div>
         <div class="field">
-          <label>CategorÃ­a</label>
-          <input v-model="form.categoria" type="text" placeholder="Ej: MatemÃ¡tica" />
+          <label>Categoría</label>
+          <input v-model="form.categoria" type="text" placeholder="Ej: Matemática" />
         </div>
         <div class="field">
           <label>Precio ($)</label>
@@ -62,7 +62,7 @@ async function handleCrear() {
   cargando.value = true;
   try {
     const { data } = await api.post("/cursos/", form);  // crea el curso en el backend
-    router.push(`/cursos/${data.curso.id}`);  // y navega al detalle del curso reciÃ©n creado
+    router.push(`/cursos/${data.curso.id}`);  // y navega al detalle del curso recién creado
   } catch (e) {
     error.value = e.response?.data?.error || "Error al crear el curso";
   } finally {

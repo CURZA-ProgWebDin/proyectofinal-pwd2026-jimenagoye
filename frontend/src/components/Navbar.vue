@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <nav class="navbar">
     <div class="navbar-inner">
       <router-link to="/" class="navbar-brand">
@@ -8,7 +8,7 @@
       <div class="navbar-links">
         <router-link to="/cursos" class="nav-link">Catálogo</router-link>
 
-        <!-- Enlace visibles solo si hay sesiÃ³n iniciada -->
+        <!-- Enlace visibles solo si hay sesión iniciada -->
         <template v-if="auth.isLoggedIn">
           <router-link to="/dashboard" class="nav-link">Mi Perfil</router-link>
           <router-link v-if="auth.esCreador" to="/crear-curso" class="nav-link">
