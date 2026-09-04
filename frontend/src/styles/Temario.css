@@ -1,0 +1,63 @@
+.modulo {
+  margin-bottom: 24px;
+}
+.modulo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #F5F0E6;
+}
+.modulo-icon {
+  font-size: 1.2rem;
+}
+.clases-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.clase-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.clase-item:hover {
+  background: #FDF8F0;
+}
+.clase-item.gratis {
+  background: #f0fdf4;
+}
+.clase-icon {
+  font-size: 1.1rem;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.clase-info {
+  flex: 1;
+}
+.clase-titulo {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+.clase-meta {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+.badge-gratis {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}

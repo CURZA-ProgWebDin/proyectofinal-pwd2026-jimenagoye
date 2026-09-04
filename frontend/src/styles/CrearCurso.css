@@ -1,0 +1,21 @@
+.crear-curso {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.crear-curso h1 {
+  font-size: 1.8rem;
+  color: #111827;
+  margin: 0 0 24px;
+}
+.curso-form {
+  background: #fffefb;
+  border: 1px solid #f5f0e6;
+  border-radius: 12px;
+  padding: 24px;
+}
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}

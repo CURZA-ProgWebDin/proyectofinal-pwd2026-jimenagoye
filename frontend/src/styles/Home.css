@@ -1,0 +1,56 @@
+.home {
+  min-height: 100vh;
+}
+.hero {
+  background: linear-gradient(135deg, #dae8f0 0%, #fdf8f0 100%);
+  padding: 80px 24px;
+  text-align: center;
+}
+.hero-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: #111827;
+  margin: 0 0 12px;
+  letter-spacing: -1px;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin: 0 0 28px;
+}
+.hero-btn {
+  display: inline-block;
+  background: #111827;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.hero-btn:hover {
+  background: #374151;
+}
+.cursos-destacados {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.section-title {
+  font-size: 1.6rem;
+  color: #111827;
+  margin: 0 0 24px;
+}
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.empty-state {
+  color: #9ca3af;
+  text-align: center;
+  padding: 40px;
+}

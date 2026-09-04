@@ -1,0 +1,59 @@
+<style scoped>
+.catalogo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+.catalogo-header {
+  margin-bottom: 32px;
+}
+.catalogo-header h1 {
+  font-size: 1.8rem;
+  color: #111827;
+  margin: 0 0 16px;
+}
+.filtros {
+  display: flex;
+  gap: 12px;
+}
+.buscador {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #E8DFD1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+}
+.buscador:focus {
+  border-color: #111827;
+}
+.filtro-select {
+  padding: 10px 14px;
+  border: 1.5px solid #b5d5e5;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  background: #f0f7fa;
+  color: #374151;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.filtro-select:hover {
+  background: #e4f0f6;
+}
+.filtro-select:focus {
+  border-color: #89b8d0;
+  background: #FFFEFB;
+}
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.empty-state {
+  text-align: center;
+  color: #9ca3af;
+  padding: 48px;
+}
+</style>
